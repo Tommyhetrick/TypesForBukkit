@@ -13,5 +13,7 @@ A not entirely feature complete web scraper for the javadocs. This makes collect
 * Method names, return types, descriptions, and template for arguments with correct amount
 * Enum members
 * Will add a return statement for classes
+
 Collected information will automatically be copied so the process of adding a new file is just: copy the name of the class, create new file, run the collector in browser, switch back to code editor, paste.
+
 The script has a minified version that can be added as a bookmark for easy access.
