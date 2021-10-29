@@ -9,4 +9,31 @@ Newer versions will build upon previous versions. Classes that have changed will
 Currently working on initial version (Bukkit for minecraft 1.16.5)
 
 # Subclasses
-Bukkit sometimes uses subclasses, especially for enums that are specfiic to a single class. Because I can't make a proper class as a property of the parent, instead I put it in the same file with the '.' replaced with _$_. You must run the subclass fix script at the same time as the typescript compiler in watch, which will replace _$_ with '.' in the output javascript file.
+Bukkit sometimes uses subclasses, especially for enums that are specfiic to a single class. Because I can't make a proper class as a property of the parent, instead I put it in the same file with the period synmbol replaced. You must run the subclass fix script at the same time as the typescript compiler in watch, which will replace periods in the output file.
+
+### Example:
+
+index.ts:
+
+```typescript
+namespace main {
+  class Parent {
+
+  }
+
+  class Parent_$_Sub {
+
+  }
+}
+```
+index.js:
+```javascript
+class Parent {
+
+}
+
+class Parent.Sub {
+
+}
+```
+
