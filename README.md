@@ -3,7 +3,7 @@ A Typescript module to help me autcomplete the Bukkit API for the [PlaceholderAP
 
 Just add a triple slash reference directive and automcomplete away!
 ```typescript
-/// <reference types="./tfb/1.16.5/" />
+/// <reference types="./tfb/<version>/" />
 ```
 
 ## Versioning
