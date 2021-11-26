@@ -2,7 +2,7 @@
 
 This folder contains the tools I use to compile the TypesForBukkit package, which you can find [here](https://www.npmjs.com/package/typesforbukkit)
 
-## Docrip
+## DocRip
 These tools allow me to rip the javadocs of the bukkit API from either the [Official Bukkit javadocs](https://hub.spigotmc.org/javadocs/bukkit/) or the achives on [HelpChat](https://helpch.at/docs/)
 and then find any changes to the classes described in each file. Files that are completely new to the version are put in a seperate file. 
 
