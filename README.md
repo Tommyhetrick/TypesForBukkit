@@ -1,49 +1,19 @@
-# TypesForBukkit
-A Typescript module to help me autcomplete the Bukkit API for the [PlaceholderAPI Javascript Expansion](https://github.com/PlaceholderAPI/Javascript-Expansion). 
+# TypesForBukkit Tools
 
-Just add a triple slash reference directive and automcomplete away!
-```typescript
-/// <reference types="./tfb/<version>/" />
-```
+This folder contains the tools I use to compile the TypesForBukkit package, which you can find [here](https://www.npmjs.com/package/typesforbukkit)
 
-## Versioning
-Newer versions will build upon previous versions. Classes that have changed will have new "patched" files but classes that have not change will reference the last version that did change.
+## Docrip
+These tools allow me to rip the javadocs of the bukkit API from either the [Official Bukkit javadocs](https://hub.spigotmc.org/javadocs/bukkit/) or the achives on [HelpChat](https://helpch.at/docs/)
+and then find any changes to the classes described in each file. Files that are completely new to the version are put in a seperate file. 
 
-Currently working on initial version (Bukkit for minecraft 1.16.5)
+## Bukkit Collector
+A not entirely feature complete web scraper for the javadocs. This makes collecting classes much quicker. It will collect the following information currently:
+* Package name
+* Class / Interface / Enum name
+* Method names, return types, descriptions, and template for arguments with correct amount
+* Enum members
+* Will add a return statement for classes
 
-# Doc Link
-Every class, interface, enum, and package will have a link near the top of the file linking to the javadoc associated with it. This uses a hosted script that redirects to either the official spigot website or HelpChat in the form of:
-  ```https://tfb.neocities.org/<version>/path/seperated/by/slashes```
-  
-  for example:
-  
-  ```https://tfb.neocities.org/1.16.5/org/bukkit/advancement/Advancement```
-# Subclasses
-Bukkit sometimes uses subclasses, especially for enums that are specfiic to a single class. Because I can't make a proper class as a property of the parent, instead I put it in the same file with the period synmbol replaced. You must run the subclass fix script at the same time as the typescript compiler in watch, which will replace periods in the output file.
+Collected information will automatically be copied so the process of adding a new file is just: copy the name of the class, create new file, run the collector in browser, switch back to code editor, paste.
 
-### Example:
-
-index.ts:
-
-```typescript
-namespace main {
-  class Parent {
-
-  }
-
-  class Parent_$_Sub {
-
-  }
-}
-```
-index.js:
-```javascript
-class Parent {
-
-}
-
-class Parent.Sub {
-
-}
-```
-
+The script has a minified version that can be added as a bookmark for easy access.
