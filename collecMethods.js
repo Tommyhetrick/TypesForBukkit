@@ -35,7 +35,7 @@ if (window.location.href.indexOf('helpch.at') > -1) {
 package = package.replace(/\/[\w.]+$/g,'').replace(/\//g,'.');
 
 if (theType == "enum") {
-    name = header.split(' ')[2];
+    name = header.replace(/Enum /g,'').replace(/Class /g,'');
 }
 
 // get rid of any junk generic in the name for the API link
