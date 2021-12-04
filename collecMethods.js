@@ -1,5 +1,8 @@
 var mainElem = document.getElementById('method-summary-table');
 
+// The id of the emum table changed for some reason.
+document.body.innerHTML = document.body.innerHTML.replace(/enum-constant-summary/g,'enum.constant.summary');
+
 var enumParent = document.getElementById('enum.constant.summary');
 
 var header = document.getElementsByClassName('header')[0].children[1].innerHTML;
@@ -69,7 +72,7 @@ if (mainElem && theType != "enum") {
             descriptionOut += "description ";     
         }
 
-        paramText = tableContents[i+1].children[0].children[0].children[0].href;
+        paramText = tableContents[i+1].children[0].getElementsByTagName('a')[0].href;
         hasParams = paramText.match(/\([\w\.\<\>\,\[\]\% ]+\)/g);
 
         paramCount = 0;
@@ -84,7 +87,7 @@ if (mainElem && theType != "enum") {
             paramCount++;
         }
 
-        methodName = tableContents[i+1].children[0].children[0].children[0].innerHTML;
+        methodName = tableContents[i+1].children[0].getElementsByTagName('a')[0].innerHTML;
 
         finalReturnType = "";
         returnType = tableContents[i].children[0];
@@ -144,7 +147,7 @@ if (mainElem && theType != "enum") {
             output += "\t\t/** @description " + enumList[i+1].children[0].innerHTML.replace(/\n/g,'').replace(/\./g,'') + " */\n";
         }
         
-        output += "\t\t" + enumList[i].children[0].children[0].children[0].innerHTML + ",\n";
+        output += "\t\t" + enumList[i].children[0].getElementsByTagName('a')[0].innerHTML + ",\n";
     }
 
     output = output.substr(0,output.length-2);
